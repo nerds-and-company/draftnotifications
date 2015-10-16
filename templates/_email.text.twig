@@ -1,0 +1,8 @@
+{{ subject }}
+
+{{ 'User'|t }}: {{ currentUser.name }}
+{{ 'Section'|t }}: {{ draft.section.name }}
+{{ 'Title'|t }}: {{ draft.title }}
+{% if status != 'deletedDraft' %}
+{{ 'Url'|t }}: {{ draft.cpEditUrl }}
+{% endif %}

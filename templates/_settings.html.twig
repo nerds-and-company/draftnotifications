@@ -1,0 +1,11 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.checkboxSelectField({
+    label: "User groups"|t,
+    instructions: "Which user groups should receives the notification?"|t,
+    id: 'userGroups',
+    name: 'userGroups',
+    options: craft.draftNotifications.userGroupOptions,
+    values: settings.userGroups
+})}}
+
