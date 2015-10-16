@@ -79,7 +79,6 @@ class DraftNotificationsServiceTest extends BaseTest
 
 
         $newPath = craft()->path->getTemplatesPath();
-        var_dump($newPath);
         $mockDraft = $this->getMockDraft();
 
         $draftNotificationsService = new DraftNotificationsService();
@@ -267,7 +266,7 @@ class DraftNotificationsServiceTest extends BaseTest
         $mockTwigEnvironment = $this->getMockBuilder('Twig_Environment')
             ->disableOriginalConstructor()
             ->getMock();
-        
+
         $mockTemplatesService->expects($this->any())
             ->method('getTwig')
             ->willReturn($mockTwigEnvironment);
