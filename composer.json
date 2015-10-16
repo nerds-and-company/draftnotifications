@@ -1,0 +1,14 @@
+{
+    "name": "itmundi/draftnotifications",
+    "description": "Draft notifications for Craft CMS",
+    "authors": [
+        {
+            "name": "Bart van Gennep",
+            "email": "b.vangennep@itmundi.nl"
+        }
+    ],
+    "type": "craft-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
