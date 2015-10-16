@@ -77,8 +77,6 @@ class DraftNotificationsServiceTest extends BaseTest
         $this->setMockTemplatesService();
         $this->setMockEmailService();
 
-
-        $newPath = craft()->path->getTemplatesPath();
         $mockDraft = $this->getMockDraft();
 
         $draftNotificationsService = new DraftNotificationsService();
