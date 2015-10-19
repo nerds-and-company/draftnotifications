@@ -66,7 +66,7 @@ class DraftNotificationsService extends BaseApplicationComponent
             case DraftNotifications_EventCallbackService::STATUS_NEW_DRAFT:
                 $message = Craft::t('A new draft has been saved');
                 break;
-            case DraftNotifications_EventCallbackService::STATUS_EXISTING_DRAFT;
+            case DraftNotifications_EventCallbackService::STATUS_EXISTING_DRAFT:
                 $message = Craft::t('An existing draft has been saved');
                 break;
             case DraftNotifications_EventCallbackService::STATUS_DELETED_DRAFT:
