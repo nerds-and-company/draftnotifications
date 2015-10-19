@@ -4,11 +4,14 @@
     "authors": [
         {
             "name": "Bart van Gennep",
-            "email": "b.vangennep@itmundi.nl"
+            "email": "b.vangennep@itmundi.nl",
+            "homepage": "http://github.com/itmundi",
+            "role": "Developer"
         }
     ],
     "type": "craft-plugin",
     "require": {
-        "composer/installers": "~1.0"
+        "composer/installers": "~1.0",
+        "php": "^5.5"
     }
 }
