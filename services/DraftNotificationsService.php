@@ -26,15 +26,15 @@ class DraftNotificationsService extends BaseApplicationComponent
         $mailSubject .= ' (' . $draft->getSection()->name . ' - ' . $draft->title . ')';
 
         $email = new EmailModel();
-        $email->toEmail = implode(',', array_map(function (UserModel $user) {
-            return $user->email;
-        }, $recipients));
         $email->replyTo = craft()->userSession->getUser()->email;
         $email->subject = $mailSubject;
         $email->body = $mailBody;
         $email->htmlBody = nl2br($mailBody);
 
-        craft()->email->sendEmail($email);
+        foreach($recipients as $recipient){
+            $email->toEmail = $recipient->email;
+            craft()->email->sendEmail($email);
+        }
 
         return $email;
     }
