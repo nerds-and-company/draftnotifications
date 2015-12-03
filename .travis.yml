@@ -33,7 +33,7 @@ before_script:
   - for item in *; do if [[ ! "$item" == "craft" ]]; then mv $item craft/plugins/migrationshelper; fi; done
   - cd craft/app
   - composer require mockery/mockery
-   - cd ../..
+  - cd ../..
 
 # execute tests
 script: phpunit --bootstrap craft/app/tests/bootstrap.php --configuration craft/plugins/migrationshelper/phpunit.xml.dist --coverage-clover coverage.clover craft/plugins/migrationshelper/tests
