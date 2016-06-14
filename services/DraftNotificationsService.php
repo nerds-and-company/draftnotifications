@@ -31,7 +31,7 @@ class DraftNotificationsService extends BaseApplicationComponent
         $email->body = $mailBody;
         $email->htmlBody = nl2br($mailBody);
 
-        foreach($recipients as $recipient){
+        foreach ($recipients as $recipient) {
             $email->toEmail = $recipient->email;
             craft()->email->sendEmail($email);
         }
@@ -47,13 +47,11 @@ class DraftNotificationsService extends BaseApplicationComponent
      */
     private function getNotificationBody(EntryModel $draft, $status, $subject)
     {
-        return TemplateHelper::getRaw(
-            craft()->templates->render('draftNotifications/_email.text.twig', array(
+        return craft()->templates->render('draftNotifications/_email.text.twig', array(
                 'draft' => $draft,
                 'status' => $status,
                 'subject' => $subject,
-            ))
-        );
+            ));
     }
 
     /**
@@ -98,7 +96,7 @@ class DraftNotificationsService extends BaseApplicationComponent
     private function getNotificationRecipients()
     {
         $userGroupHandles = craft()->plugins->getPlugin('draftNotifications')->getSettings()->userGroups;
-        if(empty($userGroupHandles)){
+        if (empty($userGroupHandles)) {
             return [];
         }
 
